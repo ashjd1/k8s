@@ -1,12 +1,11 @@
 k8s
 
-kubetcl get pods  -> list all pods
- 
-kubectl get all   ->  list everything which is running on k8s server
+minikube start --force --driver=docker
 
  ============================= deployment ============================= 
 
 deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -30,4 +29,9 @@ spec:
         - containerPort: 80
 
 
-kubetcl delete deployment nginx-deployment
+
+kubetcl get pods  											->  list all pods
+kubectl scale deployment nginx-deployment --replicas=2      ->  without making any changes in yaml file we can scale up and down
+kubectl get all 					    					->  list everything which is running on k8s server
+kubectl describe deployment nginx-deployment                ->  shows all the logs related to the deployment
+kubetcl delete deployment nginx-deployment 				    ->  delete deployment

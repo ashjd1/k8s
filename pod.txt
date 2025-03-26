@@ -1,0 +1,25 @@
+pod
+
+
+ ============================= pod ============================= 
+
+pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+  - name: ubuntu
+    image: ubuntu
+	
+	
+kubectl create -f pod.yaml  ->  create pod
+kubectl get pod			    ->  list all pods
+kubectl describe pod nginx  ->  shows all the details about pod creation.
+kubectl detele pod nginx    ->  delete pod
