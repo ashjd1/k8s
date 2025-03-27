@@ -1,8 +1,15 @@
 services (svc)
 
-When you create a pod, it gets an IP address. However, if you delete that pod and it is recreated, it will have a different IP address. Now, where a customer is accessing your service, and the pod is down. When the pod responds, it has a different IP address, and the customer can no longer access it.
+When you create a pod, it gets an IP address. However, if you delete that pod and it is recreated, 
+it will have a different IP address. Now, where a customer is accessing your service, and the pod is down. 
+When the pod responds, it has a different IP address, and the customer can no longer access it.
 
-To address this issue, **services** come into play. Services group pods together based on their metadata, such as labels, selector, app name, etc(as defined in the YAML file). Even if the pod is recreated with a new IP address, it will still be part of the same service, ensuring that the customer can continue accessing the pod seamlessly.
+To address this issue, **services** come into play. Services group pods together based on their metadata, 
+such as labels, selector, app name, etc(as defined in the YAML file). Even if the pod is recreated with a new IP address, 
+it will still be part of the same service, ensuring that the customer can continue accessing the pod seamlessly.
+
+you can check below link for better understanding of k8s arch
+https://github.com/ashjd1/k8s/blob/start-again/k8s%20arch.svg
 
 if you are using the minikube the you can loin to minikube with below command (access the k8s server)
 command :- minikube ssh
